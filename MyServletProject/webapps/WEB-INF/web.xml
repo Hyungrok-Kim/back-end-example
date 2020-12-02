@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+   <!-- xml : 확장된 마크업(태그를 사용함) 언어 -->
+   <!--  	  마크업 언어를 통해 설정을  속성명과 값으로 나눠 표현하는 문서 -->
+  <display-name>MyServletProject</display-name> <!-- 프로젝트 명 -->
+  <welcome-file-list> <!-- 시작, 맨 처음에 보여줄 파일  -->
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+<!-- 서블릿 web.xml에 등록하기 -->
+<!-- 1) 서블릿을 web.xml에 등록 -->
+<servlet>
+	<!-- 설정 시 사용할 서블릿의 명칭 -->
+	<servlet-name>
+		test1
+	</servlet-name>
+	<!-- 실제 클래스(서블릿)의 풀네임 -->
+	<servlet-class>
+		com.kh.first.controller.TestServlet1
+	</servlet-class>
+</servlet>
+
+
+<!-- 2) 등록한 서블릿과 url 주소 경로를 매핑(연결）시키기 -->
+<servlet-mapping>
+	<servlet-name>test1</servlet-name>
+	<url-pattern>/test1.do</url-pattern> <!-- url을 통해 자바 파일하고도 연결시킨다. -->	
+</servlet-mapping>
+
+
+
+</web-app>
