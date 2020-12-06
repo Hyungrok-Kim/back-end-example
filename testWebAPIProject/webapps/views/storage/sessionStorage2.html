@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>세션 스토리지 - 2 -</title>
+<script src="/test/resources/js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<h1>세션 스토리지 - 2 -</h1>
+	
+	<h3>세션 스토리지 값 확인하기</h3>
+	<button onclick="selectAll()">전체 조회</button>
+	<br>
+	key : <input type="text" id="getKey"> <br>
+	<button onclick="selectOne();">한 개 확인</button>
+	
+	<script>
+		function selectAll(){
+			console.log(sessionStorage);
+		}
+		
+		function selectOne(){
+			var key = $('#getKey').val();
+			
+			console.log(sessionStorage.getItem(key));
+		}
+	</script>
+</body>
+</html>
+
+
+

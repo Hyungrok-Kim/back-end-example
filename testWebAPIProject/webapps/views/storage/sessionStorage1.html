@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>세션 스토리지 - 1 -</title>
+<script src="/test/resources/js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<!--
+		 세션 스토리지,
+		  기존에 쿠키 방식으로 가져오던 사용자 정보를
+		 세션 방식을 통해 별도의 세션 영역을 사용하는 방법
+		 로컬 스토리지와 사용 형식은 동일하나,
+		 웹 브라우저 종료 시 값이 소멸된다.
+		 
+		 - 확인 방법 -
+		 1. sessionStorage 객체 생성
+		 2. sessionStorage에 key와 value 저장
+		 3. 브라우저 종료 후 값이 소멸되는 지 확인  
+	 -->
+	 
+	 <h1>세션 스토리지 - 1 -</h1>
+	 
+	 <h3>세션 스토리지에 값 추가하기</h3>
+	 key : <input type="text" id="itemKey"> <br>
+	 value : <input type="text" id="itemValue"> <br>
+	 <button onclick="insertItem();">값 추가하기</button>
+	 
+	 <h3>세션 스토리지 값 확인하기(콘솔)</h3>
+	 <button onclick="selectAll();">확인하기</button>
+	 
+	 <h3>세션 스토리지 값 비우기</h3>
+	 <button onclick="deleteAll();">전체 삭제</button>
+	 <br>
+	 <input type="text" id="getKey" />
+	 <button onclick="deleteOne();">값 한 개 삭제</button>
+	 
+	 <br><br><br>
+	 
+	 <a href="sessionStorage2.html">세션 스토리지 2로 가기...</a>
+	 
+	 <script>
+	 	function insertItem(){
+	 		var key = $('#itemKey').val();
+	 		var value = $('#itemValue').val();
+	 		
+	 		sessionStorage.setItem(key, value);
+	 	}
+	 	
+	 	function selectAll(){
+	 		console.log(sessionStorage);
+	 	}
+	 	
+	 	function deleteAll(){
+	 		sessionStorage.clear();
+	 		
+	 		console.log(sessionStorage);
+	 	}
+	 	
+	 	function deleteOne(){
+	 		
+	 		var key = $('#getKey').val();
+	 		
+	 		sessionStorage.removeItem(key);
+	 		
+	 		console.log(sessionStorage);
+	 	}
+	 </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

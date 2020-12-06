@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로컬 스토리지</title>
+<!-- 제이쿼리 -->
+<script src="/test/resources/js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+	<!-- 로컬 스토리지
+	
+	   - 기존에 사용자 정보를 저장했던 쿠키와 같은 역할을 수행하는
+	         웹 API 기술
+	   - 이전의 쿠키를 활용하는 방식은 사용자의 정보를 임시로 저장하는
+	     것 뿐만 아니라 자동 로그인, 개인 정보까지도 반 영구적으로 저장하는
+	    방식이었다. 하지만 저장되는 정보가 사용자 본인 뿐만 아니라 
+	    같은 PC를 사용하는 제 3자에게도 제공 정보가 같아 보안 이슈가 발생했다.
+	    그래서 쿠키 활용 방식은 비 권장 방식으로 사용이 지양 되면서
+	     웹 스토리지 기술을 대두 되었다.
+	     
+	   - 값을 저장한 후에 웹 브라우저를 종료해도 해당 데이터가
+	     그대로 유지되며, 브라우저의 쿠키 삭제 및 인터넷 사용기록 삭제 시
+	   함께 제거된다.
+	   
+	   - 사용 방법 -   
+	    1. localStorage 객체를 생성한다.
+	    2. 생성된 스토리지에 값을 저장한다. 
+	       (키와 값은 기본 문자열 형태로 관리하며, 숫자는 허용하지 않는다.)
+	    3. 생성한 스토리지로부터 값을 꺼내고,
+	       웹 브라우저를 종료 후 재 실행하여 결과를 확인한다.
+	       
+	 -->
+	 <h1>로컬 스토리지</h1>
+	 
+	 <h3>로컬 스토리지에 값 추가</h3>
+	 설정할 키 : <input type="text" id="itemKey"> <br>
+	 설정할 값 : <input type="text" id="itemValue"> <br>
+	 <button onclick="insertItem();">데이터 추가하기</button>
+	 
+	 <script>
+		function insertItem(){
+			var itemKey = $('#itemKey').val();
+			var itemValue = $('#itemValue').val();
+			
+			localStorage.setItem(itemKey, itemValue);
+		}	 
+	 
+	 </script>
+	 
+	 <h3>데이터 확인하기</h3>
+	 <button onclick="selectAll();">데이터 확인(콘솔)</button>
+	 
+	 <script>
+	 	function selectAll(){
+	 		
+	 		console.log(localStorage);
+	 	}
+	 </script>
+	 
+	 <h3>특정 데이터만 가져오기</h3>
+	 
+	 <input type="text" id="getKey">
+	 <button onclick="selectOne();">결과 확인</button>
+	 
+	 <script>
+	 	function selectOne(){
+	 		var getKey = $('#getKey').val();
+	 		
+	 		console.log(localStorage.getItem(getKey));
+	 	}
+	 </script>
+	 
+	 <h3>데이터 삭제하기</h3>
+	 
+	 1. 전체 삭제 : <button onclick="deleteAll();">삭제 확인</button>
+	 <br>
+	 2. 개별 삭제 : <br>
+	 <input type="text" id="deleteKey" /> 
+	 <button onclick="deleteOne();">삭제 확인</button>
+	 
+	 <script>
+	 	function deleteAll() {
+	 		localStorage.clear();
+	 		
+	 		console.log(localStorage);
+	 	}
+	 	
+	 	function deleteOne() {
+	 		var key = $('#deleteKey').val();
+	 		
+	 		localStorage.removeItem(key);
+	 		
+	 		console.log(localStorage);
+	 	}
+	 </script>
+	 
+	 <br><br><br><br>
+	 <br><br><br><br>
+	 <br><br><br><br>
+	 
+	 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
