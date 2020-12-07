@@ -1,0 +1,59 @@
+<!doctype html5>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8" />
+	<title>product</title>
+</head>
+<body>
+	<form action="/testWebProject/product" method="post">
+		<fieldset>
+		<legend>납품자 정보</legend>
+		<ol>
+			<li>
+				<label for="bname">납품자명 : 
+					<input type="text" id="bname" placeholder="name" required />
+				</label>
+			</li><br />
+			<li>
+				<label for="bemail">email :
+					<input type="url" id="bemail" placeholder="answs@naver.com">
+				</label>
+			</li><br />
+			<li>
+				<label for="bhome">홈페이지 :
+					<input type="text" id="bhome" placeholder="http://" autocomplete="on" />
+				</label>
+			</li>
+		</ol>
+		</fieldset>
+		<fieldset>
+		<legend>납품정보</legend>
+		<ul>
+			<li>
+				<label for="pname">상품명 :
+					<input type="text" id="pname" />
+				</label>
+			</li><br />
+			<li>
+				<label for="pnum">납품수량 :
+					<input type="number" id="pnum" min="10" placeholder="최소10"/>
+				</label>
+			</li><br />
+			<li>
+				<label for="pgrade">납품등급 :
+					<input type="range" id="pgrade"  />
+				</label>
+			</li><br />
+			<li>
+				<label for="gita">기타사항 :
+					<textarea name="" id="gita" cols="30" rows="3"></textarea>
+				</label>
+			</li>
+		</ul>
+		</fieldset>
+		<br />
+		<button type="submit">send message</button>
+	</form>
+	
+</body>
+</html>
